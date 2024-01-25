@@ -11,10 +11,11 @@ const controls = new SPLAT.OrbitControls(camera, canvas);
 
 async function main() {
     // const url = "https://huggingface.co/datasets/dylanebert/3dgs/resolve/main/bonsai/bonsai-7k-mini.splat";
-    const filepath = "data/model.splat"
+    const filepath = "data/model_strike.splat"
 
     await SPLAT.Loader.LoadAsync(filepath, scene, (progress) => progressIndicator.value = progress * 100);
     progressDialog.close();
+    renderer.backgroundColor = new SPLAT.Color32(50, 50, 50, 255);
 
     const handleResize = () => {
         renderer.setSize(window.innerWidth, window.innerHeight);
